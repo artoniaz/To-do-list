@@ -14,13 +14,13 @@ let counter = 0;
 
 //funkcja określająca dzień tygodnia
 const getDay = (day) => {
-  if (day === 1) return "poniedziałek";
-  else if (day === 2) return "wtorek";
-  else if (day === 3) return "środa";
-  else if (day === 4) return "czwartek";
-  else if (day === 5) return "piątek";
-  else if (day === 6) return "sobota";
-  else if (day === 0) return "niedziela";
+    if (day === 1) return "poniedziałek";
+    else if (day === 2) return "wtorek";
+    else if (day === 3) return "środa";
+    else if (day === 4) return "czwartek";
+    else if (day === 5) return "piątek";
+    else if (day === 6) return "sobota";
+    else if (day === 0) return "niedziela";
 };
 
 //dodanie do strony aktualnej daty
@@ -28,11 +28,11 @@ dateSpan.innerHTML = `${getDay(currentDate.getDay())}, ${currentDate.getDate()}.
 
 //funkcja określająca ważność zadania
 const checkRange = () => {
-    if (rangeInput.value == 1){
+    if (rangeInput.value == 1) {
         importanceImg.style.backgroundImage = "url('./img/turtle.png')";
-    } else if (rangeInput.value == 2){
+    } else if (rangeInput.value == 2) {
         importanceImg.style.backgroundImage = "url('./img/panda.png')";
-    } else if (rangeInput.value == 3){
+    } else if (rangeInput.value == 3) {
         importanceImg.style.backgroundImage = "url('./img/horse.png')";
     } else {
         importanceImg.style.backgroundImage = "url('./img/flame.png')";
@@ -54,7 +54,7 @@ const removeTasks = (e) => {
 const checkDay = (day, txt) => {
     let dayValue = daySelect.value;
     let dayDiv = [...daysDivs].filter(el => el.dataset.day === dayValue);
-    
+
     let newLi = document.createElement("li");
     counter++;
     newLi.dataset.number = counter;
@@ -98,15 +98,23 @@ const search = (e) => {
     const allLis = document.querySelectorAll('.allList li');
     const allUl = document.querySelector('.allList ul');
 
-    let allListFilted = [...allLis].filter(el => el.textContent.includes(value));
-    allUl.textContent = "";
-    allListFilted.forEach(el => allUl.appendChild(el));
+    //nowy kod wyszukiwarki
+    [...allLis].forEach(el => {
+        if (el.textContent.includes(value) === true) {
+            el.style.display = "inherit";
+        } else {
+            el.style.display = "none";
+        }
+    });
+    // cząstka starego kodu, który usuwam
+    // allUl.textContent = "";
+    // allListFilted.forEach(el => allUl.appendChild(el));
 };
 
 //gówna funkcja, dodająca event do list
 const addTask = () => {
     let taskValue = tasksInput.value;
-    if (taskValue === ""){
+    if (taskValue === "") {
         return alert("puste pole")
     }
     let dayValue = daySelect.value;
