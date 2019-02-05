@@ -37,27 +37,27 @@ header div.headline {
 }
 
 header h1 {
-    font-size: 8rem;
+    font-size: 7rem;
     text-transform: uppercase;
 }
 
 header p {
-    font-size: 7rem;
+    font-size: 6rem;
 }
 
 h3 {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 .tasks input.tasksInput {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 2rem 0;
     border: 1px solid black;
     padding: 1rem;
 }
 
 .tasks label {
-    font-size: 4rem;
+    font-size: 3rem;
     display: block;
 }
 
@@ -117,7 +117,7 @@ div.importanceImg {
 
 .tasks button.addTask {
     display: block;
-    font-size: 4rem;
+    font-size: 3rem;
     padding: 1rem 2rem;
     border: 5px solid var(--color);
     background-color: #FFFFFF;
@@ -142,14 +142,14 @@ section.weekDays div.day {
 }
 
 section.weekDays ul{
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: left;
     list-style: none;
     padding-left: 5rem;
 }
 
 i{
-    font-size: 3rem;
+    font-size: 2rem;
     margin-left: 2rem;
     cursor: pointer;
 }
@@ -182,7 +182,7 @@ section.mainSection div.notes {
 section.mainSection div.notes textarea{
     height: 100%;
     width: 100%;
-    font-size: 5rem;
+    font-size: 4rem;
     border: none;
     padding: 1rem;
 }
@@ -195,19 +195,56 @@ section.mainSection div.allList {
 }
 
 section ul{
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: left;
     list-style: none;
     padding-left: 5rem;
 }
 
 div.allList label{
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 div.allList input{
-    font-size: 4rem;
+    font-size: 3rem;
     border: 1px solid black;
     padding: 1rem;
     width: 80%;
+}
+
+section.alertSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+section.alertSection div{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    border: 5px solid var(--color);
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 2rem 4rem;
+}
+
+
+section.alertSection.alertActive{
+    display: block;
+}
+
+section.alertSection button{
+    color: black;
+    background-color: transparent;
+    border: 2px solid var(--color);
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
 }

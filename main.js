@@ -9,6 +9,8 @@ const daysDivs = document.querySelectorAll('.day');
 const allList = document.querySelector('div.allList');
 const importantTasks = document.querySelector('div.importantTasks');
 const searchInput = document.querySelector('.allList input');
+const alert = document.querySelector('.alertSection');
+const closeAlertBtn = document.querySelector('.alertSection button');
 
 let counter = 0;
 
@@ -115,11 +117,16 @@ const search = (e) => {
 const addTask = () => {
     let taskValue = tasksInput.value;
     if (taskValue === "") {
-        return alert("puste pole")
+        return alert.classList.add("alertActive");
     }
     let dayValue = daySelect.value;
     checkDay(dayValue, taskValue);
     reset();
+};
+
+//funkcja zamknięcia alertu
+const closeAlert = () => {
+    alert.classList.remove("alertActive");
 };
 
 
@@ -127,4 +134,9 @@ const addTask = () => {
 addTaskBtn.addEventListener("click", addTask);
 rangeInput.addEventListener("input", checkRange);
 searchInput.addEventListener("input", search);
-
+closeAlertBtn.addEventListener("click", closeAlert);
+document.addEventListener("keydown", (e) => {
+    if (e.keyCode == 13){
+        return addTask();
+    }
+});
