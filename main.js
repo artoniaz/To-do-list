@@ -135,7 +135,7 @@ addTaskBtn.addEventListener("click", addTask);
 rangeInput.addEventListener("input", checkRange);
 searchInput.addEventListener("input", search);
 closeAlertBtn.addEventListener("click", closeAlert);
-document.addEventListener("keydown", (e) => {
+tasksInput.addEventListener("keydown", (e) => {
     if (e.keyCode == 13){
         return addTask();
     }
